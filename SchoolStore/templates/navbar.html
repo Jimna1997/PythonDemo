@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'Schoolapp:login' %}">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'Schoolapp:register' %}">Register</a>
+        </li>
+        <li class="nav-item dropdown {% if 'Schoolapp' in request.path %} active {% endif %} ">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Departments
+          </a>
+          <ul class="dropdown-menu">
+<!--            <li><a class="dropdown-item" href="{% url 'Schoolapp:home' %}">All Products</a></li>-->
+            {% for dept in dept_list %}
+                <li><a class="dropdown-item" href="{% url 'Schoolapp:department' dept.id %}">{{dept.name}}</a></li>
+            {% endfor %}
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'Schoolapp:logout' %}">LogOut</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

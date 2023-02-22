@@ -1,0 +1,22 @@
+{% extends 'home.html' %}
+{% load static %}
+
+{% block content %}
+<div class="row my_prod_row_class">
+    <div class="container">
+        <br>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-8">
+                <h1 class="my_prod_justify my_prod_text">{{depart.name}}</h1>
+                <p class="my_title">Overview</p>
+                <p class="my_prod_justify my_prod_text">{{depart.overview}}</p>
+                <p class="my_title">Mission</p>
+                <p class="my_prod_justify my_prod_text">{{depart.mission}}</p>
+                <p class="my_title">Vision</p>
+                <p class="my_prod_justify my_prod_text">{{depart.vision}}</p>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+{% endblock %}
